@@ -1,0 +1,650 @@
+/* =========================================
+   1. COLORS AND BASIC SETUP
+   Change the colors here and the whole site updates
+   ========================================= */
+:root {
+  --background: #080b16;
+  --background-light: #0d1120;
+  --card: #111629;
+  --border: #1f2640;
+  --text: #f2f3fa;
+  --muted: #a3a9c2;
+  --purple: #8b3dff;
+  --purple-light: #a970ff;
+}
+
+/* Remove default spacing and make sizes easier to work with */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", Arial, sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Keeps content centered and not too wide */
+.container {
+  width: 90%;
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+/* Small helper classes used in the HTML */
+.purple {
+  color: var(--purple-light);
+}
+
+.green {
+  color: #22c55e;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.bold {
+  font-weight: 600;
+}
+
+
+/* =========================================
+   2. BUTTONS
+   ========================================= */
+.btn {
+  display: inline-block;
+  padding: 12px 26px;
+  border-radius: 50px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-purple {
+  background-color: var(--purple);
+  color: white;
+  border: 2px solid var(--purple);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--text);
+  border: 2px solid var(--border);
+}
+
+.btn-purple:hover {
+  background-color: var(--purple-light);
+}
+
+.btn-outline:hover {
+  border-color: var(--purple-light);
+}
+
+
+/* =========================================
+   3. HEADER / NAVIGATION
+   ========================================= */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--background);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.logo-box {
+  display: inline-block;
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  border-radius: 8px;
+  background-color: var(--purple);
+  color: white;
+  font-weight: 800;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: var(--muted);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: var(--purple-light);
+}
+
+.hire-btn {
+  padding: 8px 22px;
+  border-color: var(--purple);
+}
+
+/* The menu button is hidden on big screens */
+.menu-button {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 24px;
+  cursor: pointer;
+}
+
+
+/* =========================================
+   4. HERO (top section)
+   The image file is: images/hero.jpg
+   ========================================= */
+.hero {
+  padding: 90px 0;
+  border-bottom: 1px solid var(--border);
+  background:
+    linear-gradient(90deg, #080b16 35%, rgba(8, 11, 22, 0.2)),
+    url("images/hero.jpg") right center / cover no-repeat,
+    #150c33;
+}
+
+.hero-hi {
+  color: var(--purple-light);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.hero-name {
+  color: var(--purple-light);
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.hero-job {
+  margin-top: 8px;
+  font-size: 24px;
+}
+
+.hero-text {
+  max-width: 480px;
+  margin: 20px 0 28px 0;
+  color: var(--muted);
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 20px;
+  font-size: 18px;
+  color: var(--muted);
+}
+
+.social-icons a:hover {
+  color: var(--purple-light);
+}
+
+
+/* =========================================
+   5. GENERAL SECTION STYLES
+   ========================================= */
+.section {
+  padding: 60px 0;
+}
+
+.section-dark {
+  background-color: var(--background-light);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.section-title {
+  font-size: 20px;
+  border-left: 4px solid var(--purple-light);
+  padding-left: 12px;
+}
+
+.section-subtitle {
+  margin: 6px 0 26px 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+
+/* =========================================
+   6. ABOUT
+   Photo file is: images/profile.jpg
+   ========================================= */
+.about-grid {
+  display: grid;
+  grid-template-columns: 200px 1fr 360px;
+  gap: 36px;
+  align-items: start;
+}
+
+.photo {
+  height: 250px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background:
+    url("images/profile.jpg") center / cover no-repeat,
+    linear-gradient(160deg, #3b1d85, #12082e);
+}
+
+.small-title {
+  margin-bottom: 10px;
+  color: var(--purple-light);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.about-text h3 {
+  margin-bottom: 12px;
+  font-size: 26px;
+  line-height: 1.3;
+}
+
+.about-text p {
+  color: var(--muted);
+}
+
+.about-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 26px;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.about-info i {
+  margin-right: 6px;
+  color: var(--purple-light);
+}
+
+.about-info .green {
+  color: #22c55e;
+}
+
+/* "What I do" box */
+.box {
+  padding: 24px 28px;
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+.box h4 {
+  margin-bottom: 14px;
+  font-size: 18px;
+}
+
+.check-list li {
+  padding: 6px 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.check-list i {
+  margin-right: 10px;
+  color: var(--purple-light);
+}
+
+
+/* =========================================
+   7. SKILLS
+   "auto-fit" makes the grid adjust by itself
+   ========================================= */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 14px;
+}
+
+.skill {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.skill i {
+  font-size: 26px;
+}
+
+/* Icon colors */
+.html {
+  color: #e44d26;
+}
+
+.css {
+  color: #2965f1;
+}
+
+.js {
+  color: #f7df1e;
+}
+
+.react {
+  color: #61dafb;
+}
+
+.git {
+  color: #f05133;
+}
+
+.vscode {
+  color: #3b9ddd;
+}
+
+.figma {
+  color: #a259ff;
+}
+
+
+/* =========================================
+   8. PROJECTS
+   Image files: images/malodac.jpg, yoam.jpg, portfolio.jpg
+   ========================================= */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+.card:hover {
+  border-color: var(--purple-light);
+}
+
+.card-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 130px;
+  margin-bottom: 14px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* Each project image has a backup color in case the photo is missing */
+.image-malodac {
+  background:
+    url("images/malodac.jpg") center / cover no-repeat,
+    linear-gradient(135deg, #0c0c0c, #3a3a3a);
+}
+
+.image-yoam {
+  background:
+    url("images/yoam.jpg") center / cover no-repeat,
+    linear-gradient(135deg, #c1121f, #ff7a18);
+}
+
+.image-portfolio {
+  background:
+    url("images/portfolio.jpg") center / cover no-repeat,
+    linear-gradient(135deg, #150c33, #5b21b6);
+}
+
+.image-soon {
+  background: linear-gradient(160deg, #0f1030, #4c1d95);
+}
+
+.card h5 {
+  margin-bottom: 6px;
+  font-size: 16px;
+}
+
+.card p {
+  flex-grow: 1;
+  margin-bottom: 14px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.card-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.tag {
+  padding: 3px 12px;
+  border-radius: 6px;
+  background-color: rgba(80, 90, 200, 0.2);
+  border: 1px solid rgba(110, 120, 230, 0.4);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.tag-js {
+  background-color: rgba(220, 170, 40, 0.18);
+  border-color: rgba(220, 170, 40, 0.45);
+}
+
+.card-link {
+  margin-left: auto;
+  color: var(--purple-light);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+/* =========================================
+   9. EXPERIENCE + CONTACT
+   ========================================= */
+.bottom-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.circle-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  line-height: 44px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: rgba(139, 61, 255, 0.2);
+  color: var(--purple-light);
+}
+
+.timeline-item small {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.timeline-item p {
+  margin-top: 4px;
+  font-size: 14px;
+}
+
+#contact h3 {
+  margin-bottom: 8px;
+  font-size: 22px;
+}
+
+#contact p {
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.contact-line {
+  margin-bottom: 14px;
+  font-size: 14px;
+}
+
+.contact-line i {
+  width: 24px;
+}
+
+
+/* =========================================
+   10. FOOTER
+   ========================================= */
+.footer {
+  padding: 26px 0;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 13px;
+}
+
+.to-top {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background-color: var(--card);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.to-top:hover {
+  border-color: var(--purple-light);
+}
+
+
+/* =========================================
+   11. RESPONSIVE (tablets and phones)
+   These rules only apply on smaller screens
+   ========================================= */
+
+/* Tablets */
+@media (max-width: 1000px) {
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .photo {
+    width: 200px;
+  }
+
+}
+
+/* Phones and small tablets */
+@media (max-width: 760px) {
+
+  /* Hide the Hire Me button and show the menu button */
+  .hire-btn {
+    display: none;
+  }
+
+  .menu-button {
+    display: block;
+  }
+
+  /* Links become a dropdown list under the header */
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    padding: 10px 5%;
+    background-color: var(--background);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-links a {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* JavaScript adds the "open" class when the menu button is clicked */
+  .nav-links.open {
+    display: flex;
+  }
+
+  /* Smaller text and spacing */
+  .hero {
+    padding: 60px 0;
+  }
+
+  .hero-name {
+    font-size: 48px;
+  }
+
+  .hero-job {
+    font-size: 20px;
+  }
+
+  .section {
+    padding: 40px 0;
+  }
+
+  .footer-content {
+    justify-content: center;
+    text-align: center;
+  }
+
+}
